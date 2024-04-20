@@ -1,4 +1,4 @@
-export _SETUP="$(dirname $(dirname $(readlink -f "$0")))"
+export _SETUP="$(dirname $(dirname $(readlink -f "$HOME/.zshrc")))"
 
 # load devbox global packages first, so they can be used down the road
 # https://www.jetify.com/devbox/docs/cli_reference/devbox_global/
