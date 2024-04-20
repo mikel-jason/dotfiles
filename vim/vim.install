@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+if ! command -v vim &>/dev/null; then
+    devbox global add vim
+else
+    echo "vim already installed"
+fi

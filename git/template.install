@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+git config --file ~/.gitconfig.local init.templateDir "$_SETUP/git/templateDir/dotgit"

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if ! command -v zsh &>/dev/null; then
+    devbox global add zsh
+    chsh -s $(which zsh)
+else
+    echo "zsh already installed"
+fi

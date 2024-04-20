@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+git config --file ~/.gitconfig.local core.excludesFile "$_SETUP/git/global-ignore"

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+if [[ -a "$(git rev-parse --show-toplevel)/.pre-commit-config.yaml" ]]; then
+    ARGS=(
+        hook-impl
+        --config=.pre-commit-config.yaml
+        --hook-type=pre-commit
+        --hook-dir="$(cd "$(dirname "$0")" && pwd)"
+        --
+        "$@"
+        )
+    exec pre-commit "${ARGS[@]}"
+fi

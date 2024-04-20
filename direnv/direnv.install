@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+if ! command -v direnv &>/dev/null; then
+    devbox global add direnv
+else
+    echo "direnv already installed"
+fi

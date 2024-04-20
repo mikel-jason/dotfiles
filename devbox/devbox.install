@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+if ! command -v devbox &>/dev/null; then
+    echo "Installing devbox globally"
+    curl -fsSL https://get.jetify.com/devbox | bash
+else
+    echo "devbox already installed"
+fi

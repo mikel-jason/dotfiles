@@ -1,0 +1,22 @@
+[alias]
+    co = checkout
+    cob = checkout -b
+    ls = log --oneline --decorate
+    ca = commit --amend
+    can = commit --amend --no-edit
+    pushf = push --force-with-lease
+
+[core]
+    editor = vim
+
+[init]
+	defaultBranch = main
+
+[pull]
+    rebase = true
+
+[fetch]
+    prune = true
+
+[include]
+    path = ~/.gitconfig.local

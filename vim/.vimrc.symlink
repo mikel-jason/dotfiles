@@ -1,0 +1,16 @@
+syntax enable
+filetype plugin indent on
+
+set nu rnu
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nowrap
+set smartcase
+set incsearch
+set hidden
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+dstDir=$(git rev-parse --show-toplevel)
+
+# find -H "$_SETUP/git/templateDir" \
+#     -maxdepth 1 \
+#     -type f \
+#     -not -path "$_SETUP/git/templateDir/dotgit/*" \
+#     -exec [[ -a "$dstDir/$(basename "{}")" ]] || cp {} "$dstDir" \;
+
+find -H "$_SETUP/git/templateDir" \
+    -maxdepth 1 \
+    -type f \
+    -not -path "$_SETUP/git/templateDir/dotgit/*" \
+    -exec sh -c '[[ -a "$1/$(basename "$2")" ]] || cp "$2" "$1"' sh "$dstDir" {} \;
