@@ -2,7 +2,13 @@
 
 if ! command -v zsh &>/dev/null; then
     devbox global add zsh
-    chsh -s $(which zsh)
+    zshPath=$(which zsh)
+    if [[ -n "$zshPath" ]]; then
+        echo "$zshPaht" >> /etc/shells
+        chsh -s "$zshPath"
+    else
+        echo "WARNING Could not set zsh as default shell"
+    fi
 else
     echo "zsh already installed"
 fi

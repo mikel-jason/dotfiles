@@ -12,6 +12,9 @@ do
     $file
 done
 
+eval "$(devbox global shellenv --recompute)"
+eval "$(devbox global shellenv)" # to make tools available, ~/.zsh is not active yet
+
 echo "Checking other installations"
 for file in $(find -H '.' -name '*.install' -not -path '*/.git/*' -not -path '*/devbox/*')
 do
