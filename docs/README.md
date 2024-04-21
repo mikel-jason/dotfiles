@@ -15,7 +15,7 @@
   - (Almost) no apps on host system like python runtime
 - Allow local customization:
   - Customize via `.envrc` and `devbox.json`
-  - Integrate some `.local` files where needed, e.g. `~/.gitconfig.local`
+  - Integrate some `.local` files where needed, e.g. `~/.gitconfig.local` and `~/.zshrc.local`
 
 ## Install
 

@@ -58,7 +58,7 @@ do
 done
 
 if [[ -a ~/.zshrc.local ]]; then
-  source ~.zshrc.local
+  source ~/.zshrc.local
 fi
 
 unset config_files

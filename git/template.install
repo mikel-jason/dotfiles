@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
-
-git config --file ~/.gitconfig.local init.templateDir "$_SETUP/git/templateDir/dotgit"
+current=$(git config --get --file ~/.gitconfig.local init.templateDir)
+new="$_SETUP/git/templateDir/dotgit"
+if [[ "$current" == "" ]]; then
+    git config --file ~/.gitconfig.local init.templateDir "$_SETUP/git/templateDir/dotgit"
+elif [[ "$current" != "$new" ]]; then
+    echo "git template directory has an unexpected value, override? (y to override)"
+    read -r -n1 decision
+    echo
+    if [[ "$decision" == "y" ]]; then
+        echo "Overriding git template directory"
+        git config --file ~/.gitconfig.local init.templateDir "$_SETUP/git/templateDir/dotgit"
+    else
+        echo "Leaving git template directory as is: $current"
+    fi
+fi

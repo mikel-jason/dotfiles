@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
-
-git config --file ~/.gitconfig.local core.excludesFile "$_SETUP/git/global-ignore"
+current=$(git config --get --file ~/.gitconfig.local core.excludesFile)
+new="$_SETUP/git/global-ignore"
+if [[ "$current" == "" ]]; then
+    git config --file ~/.gitconfig.local core.excludesFile "$_SETUP/git/global-ignore"
+elif [[ "$current" != "$new" ]]; then
+    echo "git template directory has an unexpected value, override? (y to override)"
+    read -r -n1 decision
+    echo
+    if [[ "$decision" == "y" ]]; then
+        echo "Overriding git template directory"
+        git config --file ~/.gitconfig.local core.excludesFile "$_SETUP/git/global-ignore"
+    else
+        echo "Leaving git template directory as is: $current"
+    fi
+fi
