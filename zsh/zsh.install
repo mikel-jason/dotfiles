@@ -4,8 +4,8 @@ if ! command -v zsh &>/dev/null; then
     devbox global add zsh
     zshPath=$(which zsh)
     if [[ -n "$zshPath" ]]; then
-        echo "$zshPaht" >> /etc/shells
-        chsh -s "$zshPath"
+        echo "$zshPath" | sudo tee -a /etc/shells
+        sudo chsh -s "$zshPath"
     else
         echo "WARNING Could not set zsh as default shell"
     fi
