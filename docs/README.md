@@ -13,6 +13,8 @@
 - As few assumptions/restrictions as possible
   - No hard-coded paths, use `$_SETUP` to reference files in this repository
   - (Almost) no apps on host system like python runtime
+    - `zsh`: Bootstrapping is a problem: Must read `.zshrc` to make `zsh` via devbox available. Must be recognized by VSCode.
+    - `git`: Bootstrapping & git is used everywhere, so for performance of devbox shells
 - Allow local customization:
   - Customize via `.envrc` and `devbox.json`
   - Integrate some `.local` files where needed, e.g. `~/.gitconfig.local` and `~/.zshrc.local`
@@ -20,6 +22,7 @@
 ## Install
 
 - Install a nerdfont
+- Install zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and make it the default (`chsh -s "$(which zsh)"`)
 - Install git
 - Clone this repository to any location including submodules
   ```shell
