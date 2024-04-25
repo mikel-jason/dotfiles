@@ -6,6 +6,7 @@
     can = commit --amend --no-edit
     pushf = push --force-with-lease
     pushu = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
+    canpf = !git commit --amend --no-edit && git push --force-with-lease
 
 [core]
     editor = vim
