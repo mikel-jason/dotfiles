@@ -62,3 +62,13 @@ if [[ -a ~/.zshrc.local ]]; then
 fi
 
 unset config_files
+
+custom_init() {
+  if [[ -n "$_SETUP_CUSTOM_RC" ]] && [[ "$_SETUP_CUSTOM_INIT" != "$_SETUP_CUSTOM_RC" ]]; then
+    echo "Sourcing custom RC file: $_SETUP_CUSTOM_RC"
+    source "$_SETUP_CUSTOM_RC"
+    export _SETUP_CUSTOM_INIT="$_SETUP_CUSTOM_RC"
+  fi
+}
+
+functions[precmd]+='custom_init'
