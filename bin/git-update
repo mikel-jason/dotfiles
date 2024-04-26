@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+remote="${1:-origin}"
+
+git fetch "$remote" -p
+defaultBranch=$(git symbolic-ref refs/remotes/$remote/HEAD)
+echo "Rebasing to ${defaultBranch#refs/remotes/}"
+git rebase "$defaultBranch"
