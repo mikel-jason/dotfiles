@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+if ! command -v tmux &>/dev/null; then
+    devbox global add tmux
+else
+    echo "tmux already installed"
+fi
