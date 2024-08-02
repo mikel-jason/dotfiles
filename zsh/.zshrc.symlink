@@ -48,10 +48,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 typeset -U config_files
 config_files=($_SETUP/**/*.zsh)
-for file in ${(M)config_files}
+for file in ${config_files}
 do
-  if [[ "$file" == "*/modules/*" ]]; then
-    echo "Skip sourcing $file"
+  if [[ "$file" == */modules/* ]]; then
     continue
   fi
   source $file
