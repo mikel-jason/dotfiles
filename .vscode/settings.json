@@ -3,6 +3,7 @@
         "*.install": "shellscript",
         ".toml.symlink": "toml",
         "*.yaml.symlink": "yaml",
-        "*.zsh": "shellscript"
+        "*.zsh": "shellscript",
+        ".zshrc.symlink": "shellscript"
     }
 }
