@@ -7,7 +7,7 @@
     pushf = push --force-with-lease
     pushu = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
     canpf = !git commit --amend --no-edit && git push --force-with-lease
-    gr = !cd $(git rev-parse --show-toplevel)
+    root = !cd $(git rev-parse --show-toplevel)
 
 [core]
     editor = vim
